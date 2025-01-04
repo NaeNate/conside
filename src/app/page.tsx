@@ -19,15 +19,11 @@ export default function Home() {
   }, [])
 
   const start = () => {
-    if (recorder) {
-      recorder.start(2000)
-    }
+    if (recorder) recorder.start(2000)
   }
 
   const stop = () => {
-    if (recorder) {
-      recorder.stop()
-    }
+    if (recorder) recorder.stop()
   }
 
   return (
