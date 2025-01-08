@@ -8,5 +8,5 @@ export const transcribe = async (data: Blob) => {
     model: "whisper-1",
   })
 
-  console.log(text)
+  return text
 }
