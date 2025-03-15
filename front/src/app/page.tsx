@@ -1,9 +1,10 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 
 export default function Home() {
   const chunks = useRef<Blob[]>([])
+  const [text, setText] = useState("")
 
   return (
     <>
@@ -32,6 +33,8 @@ export default function Home() {
                 method: "POST",
                 body: fd,
               }).then((res) => res.json())
+
+              setText((prev) => prev + x.claim)
               console.log(x)
 
               recorder.start()
@@ -47,6 +50,8 @@ export default function Home() {
       >
         Go
       </button>
+
+      {text}
     </>
   )
 }
